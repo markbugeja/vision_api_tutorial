@@ -1,4 +1,4 @@
-from flask import Flask, request, Response
+from flask import Flask, request, Response, send_file
 import jsonpickle
 import numpy as np
 import cv2
@@ -18,12 +18,12 @@ def GreyScale():
     '''
     img = cv2.imread("naturo-monkey-selfie.jpg",1);
     # build a response dict to send back to client
-    response = {'message': 'image received. size={}x{}'.format(img.shape[1], img.shape[0])
+    #response = {'message': 'image received. size={}x{}'.format(img.shape[1], img.shape[0])
                 }
     # encode response using jsonpickle
-    response_pickled = jsonpickle.encode(response)
+    #response_pickled = jsonpickle.encode(response)
 
-    return Response(response=response_pickled, status=200, mimetype="application/json")
+    return send_file(img, mimetype='image/jpeg')
 
 
 # start flask app
