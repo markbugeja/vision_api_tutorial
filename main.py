@@ -16,7 +16,7 @@ def GreyScale():
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 	greyimg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     '''
-    img = cv2.imread("https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg?w968h681",1);
+    img = cv2.imread("naturo-monkey-selfie.jpg",1);
     # build a response dict to send back to client
     response = {'message': 'image received. size={}x{}'.format(img.shape[1], img.shape[0])
                 }
