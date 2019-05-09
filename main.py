@@ -7,7 +7,7 @@ import cv2
 app = Flask(__name__)
 
 
-@app.route('/api/GreyScale', methods=['POST'])
+@app.route('/')
 def GreyScale():
     '''r = request
     # convert string of image data to uint8
@@ -27,4 +27,5 @@ def GreyScale():
 
 
 # start flask app
-app.run(host='127.0.0.1', port=8080, debug=True)
+if __name__ == '__main__':
+	app.run(host='127.0.0.1', port=8080, debug=True)
