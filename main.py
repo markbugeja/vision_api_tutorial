@@ -18,8 +18,7 @@ def GreyScale():
     '''
     img = cv2.imread("naturo-monkey-selfie.jpg",1);
     # build a response dict to send back to client
-    #response = {'message': 'image received. size={}x{}'.format(img.shape[1], img.shape[0])
-                }
+    #response = {'message': 'image received. size={}x{}'.format(img.shape[1], img.shape[0])}
     # encode response using jsonpickle
     #response_pickled = jsonpickle.encode(response)
 
