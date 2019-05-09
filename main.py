@@ -17,16 +17,12 @@ def GreyScale():
 	greyimg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     '''
     img = cv2.imread("naturo-monkey-selfie.jpg",1);
+    img_str = cv2.imencode('.jpg', img)[1].tostring()
     # build a response dict to send back to client
-    #response = {'message': 'image received. size={}x{}'.format(img.shape[1], img.shape[0])}
+    response = {'message': 'image received. size={}x{}'.format(img.shape[1], img.shape[0]), 'contents':img_str}
     # encode response using jsonpickle
-    #response_pickled = jsonpickle.encode(response)
-
-    return send_file(
-    io.BytesIO(img),
-    mimetype='image/jpeg',
-    as_attachment=True,
-    attachment_filename='%s.jpg' % pid)
+    response_pickled = jsonpickle.encode(response)
+    
 
 
 # start flask app
