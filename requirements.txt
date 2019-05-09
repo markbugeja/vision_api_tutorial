@@ -1,0 +1,4 @@
+flask
+openncv-python
+numpy
+jsonpickle
