@@ -9,16 +9,16 @@ app = Flask(__name__)
 
 @app.route('/api/GreyScale', methods=['POST'])
 def GreyScale():
-    r = request
+    '''r = request
     # convert string of image data to uint8
     nparr = np.fromstring(r.data, np.uint8)
     # decode image
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 	greyimg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    # do some fancy processing here....
-
+    '''
+    img = cv2.imread("https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg?w968h681",1);
     # build a response dict to send back to client
-    response = {'message': 'image received. size={}x{}'.format(greyimg.shape[1], greyimg.shape[0])
+    response = {'message': 'image received. size={}x{}'.format(img.shape[1], img.shape[0])
                 }
     # encode response using jsonpickle
     response_pickled = jsonpickle.encode(response)
