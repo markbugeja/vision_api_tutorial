@@ -22,7 +22,7 @@ def GreyScale():
     # encode response using jsonpickle
     #response_pickled = jsonpickle.encode(response)
 
-    return send_file(img, mimetype='image/jpeg')
+    return send_file(img, mimetype='image/jpg')
 
 
 # start flask app
